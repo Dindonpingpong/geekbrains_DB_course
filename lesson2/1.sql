@@ -1,0 +1,1 @@
+UPDATE catalogs SET name="empty" WHERE name = NULL OR name = ' ';

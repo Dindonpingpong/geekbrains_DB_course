@@ -1,0 +1,1 @@
+mysqldump -u [username] -p [dbname] {--opt} --where="true limit 100" > dump.sql

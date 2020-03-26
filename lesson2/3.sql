@@ -1,0 +1,1 @@
+REPLACE INTO cat SELECT * FROM catalogs;

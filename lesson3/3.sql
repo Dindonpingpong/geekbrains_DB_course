@@ -1,0 +1,1 @@
+SELECT * FROM storehouses_products ORDER BY value IF(SORT = 0, 99999999999, SORT);
