@@ -1,0 +1,1 @@
+SELECT catalogs.name, products.name FROM products INNER JOIN catalogs ON products.CategoryID = catalogs.CategoryID;

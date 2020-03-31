@@ -1,0 +1,1 @@
+SELECT DAYNAME(birthday) AS Day, COUNT(*) FROM users GROUP BY Day;

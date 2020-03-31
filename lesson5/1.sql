@@ -1,0 +1,1 @@
+SELECT DISTINCT users.name FROM users INNER JOIN orders ON orders.UserID = users.id;
