@@ -1,14 +1,26 @@
 > use shop
 switched to db shop
-> db.shop.insert({tags: 'products', name: 'Intel Core i3-8100'})
-WriteResult({ "nInserted" : 1 })
-> db.shop.insert({tags: 'catalogs', name: 'Процессоры'})
-WriteResult({ "nInserted" : 1 })
+> db.createCollection('products')
+{ "ok" : 1 }
+> db.createCollection('catalogs')
+{ "ok" : 1 }
 > show dbs
 admin   0.000GB
 config  0.000GB
 local   0.000GB
 shop    0.000GB
-> db.shop.find()
-{ "_id" : ObjectId("5e888e8b7c2f3a1ef6fed4df"), "tags" : "products", "name" : "Intel Core i3-8100" }
-{ "_id" : ObjectId("5e888e9b7c2f3a1ef6fed4e0"), "tags" : "catalogs", "name" : "Процессоры" }
+> show tables
+catalogs
+products
+> db.catalogs.insert({name: 'Процессоры'})
+WriteResult({ "nInserted" : 1 })
+> db.catalogs.insert({name: 'Видекарты'})
+WriteResult({ "nInserted" : 1 })
+> db.catalogs.find()
+{ "_id" : ObjectId("5e8897617a2b378cb591357e"), "name" : "Процессоры" }
+{ "_id" : ObjectId("5e8897717a2b378cb591357f"), "name" : "Видекарты" }
+> db.products.insert({name: 'Intel Core i3-8100', catalog_id: new ObjectId("5e8897617a2b378cb591357e")})
+WriteResult({ "nInserted" : 1 })
+> db.products.find()
+{ "_id" : ObjectId("5e8897b47a2b378cb5913580"), "name" : "Intel Core i3-8100", "catalog_id" : ObjectId("5e8897617a2b378cb591357e") }
+>
