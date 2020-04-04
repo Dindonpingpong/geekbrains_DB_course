@@ -1,0 +1,9 @@
+HSET users myname test1@mail.ru
+HSET mails test1@mail.ru myname
+
+HSET users myname2 test2@gmail.com
+HSET mails test2@gmail.com myname2
+
+HGET users myname
+
+HGET mails test2@gmail.com
